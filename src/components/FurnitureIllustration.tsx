@@ -7,11 +7,15 @@ type Props = {
 export type ProductKind =
   | 'sofa'
   | 'bed'
+  | 'bedCozy'
+  | 'bedKing'
   | 'dining'
+  | 'diningNour'
   | 'wardrobe'
   | 'chair'
   | 'tv'
   | 'nightstand'
+  | 'nightstandAmal'
   | 'carpet';
 
 const COLORS = {
@@ -217,6 +221,163 @@ function Nightstand() {
   );
 }
 
+function BedCozy() {
+  return (
+    <Frame label="غرفة نوم دافئة">
+      {/* warm wall accent */}
+      <rect x="0" y="0" width="800" height="240" fill={COLORS.bg2} />
+      <circle cx="640" cy="120" r="60" fill={COLORS.woodLight} opacity="0.4" />
+      {/* wall shelf */}
+      <rect x="90" y="150" width="180" height="14" rx="4" fill={COLORS.wood} />
+      <rect x="120" y="110" width="30" height="40" rx="4" fill={COLORS.fabricDark} />
+      <rect x="170" y="100" width="24" height="50" rx="4" fill={COLORS.cream} />
+      <rect x="210" y="120" width="34" height="30" rx="4" fill={COLORS.green} />
+      {/* framed art */}
+      <rect x="360" y="90" width="80" height="100" rx="6" fill="#fff" stroke={COLORS.wood} strokeWidth="6" />
+      <path d="M372 160 L400 120 L420 145 L428 130 L432 160 Z" fill={COLORS.green} opacity="0.7" />
+      {/* headboard arched */}
+      <path d="M210 320 Q400 200 590 320 L590 360 L210 360 Z" fill={COLORS.fabricDark} />
+      <path d="M230 318 Q400 230 570 318 L570 350 L230 350 Z" fill={COLORS.fabric} opacity="0.6" />
+      {/* bed frame */}
+      <rect x="170" y="360" width="460" height="40" rx="10" fill={COLORS.wood} />
+      {/* mattress + duvet */}
+      <rect x="190" y="330" width="420" height="50" rx="14" fill={COLORS.cream} />
+      <path d="M190 380 Q400 360 610 380 L610 470 Q400 490 190 470 Z" fill={COLORS.fabric} />
+      <path d="M400 380 L610 380 L610 470 Q500 482 400 470 Z" fill={COLORS.fabricDark} opacity="0.55" />
+      {/* folded blanket strip */}
+      <rect x="190" y="440" width="420" height="22" rx="8" fill={COLORS.fabricDark} />
+      {/* pillows */}
+      <rect x="225" y="300" width="130" height="48" rx="22" fill="#fff" />
+      <rect x="445" y="300" width="130" height="48" rx="22" fill="#fff" />
+      {/* lamp glow */}
+      <circle cx="660" cy="250" r="40" fill="#ffe9b8" opacity="0.5" />
+      <rect x="650" y="250" width="20" height="80" rx="4" fill={COLORS.woodDark} />
+      <path d="M620 250 L700 250 L685 210 L635 210 Z" fill={COLORS.cream} stroke={COLORS.woodDark} strokeWidth="3" />
+      {/* rug */}
+      <ellipse cx="400" cy="540" rx="240" ry="22" fill={COLORS.fabric} opacity="0.6" />
+    </Frame>
+  );
+}
+
+function BedKing() {
+  return (
+    <Frame label="سرير سحار كينج">
+      {/* tufted headboard */}
+      <rect x="150" y="120" width="500" height="200" rx="26" fill={COLORS.woodDark} />
+      <rect x="170" y="140" width="460" height="170" rx="20" fill={COLORS.fabric} />
+      {Array.from({ length: 3 }).map((_, r) =>
+        Array.from({ length: 5 }).map((_, c) => (
+          <circle
+            key={`t${r}-${c}`}
+            cx={250 + c * 80}
+            cy={175 + r * 50}
+            r="6"
+            fill={COLORS.fabricDark}
+            opacity="0.5"
+          />
+        )),
+      )}
+      {/* frame */}
+      <rect x="130" y="320" width="540" height="50" rx="10" fill={COLORS.wood} />
+      <rect x="125" y="362" width="550" height="16" rx="6" fill={COLORS.woodDark} />
+      {/* mattress */}
+      <rect x="150" y="290" width="500" height="50" rx="14" fill={COLORS.cream} />
+      {/* king duvet with fold */}
+      <path d="M150 340 L650 340 L650 470 Q400 488 150 470 Z" fill={COLORS.fabric} />
+      <path d="M400 340 L650 340 L650 470 Q525 482 400 470 Z" fill={COLORS.fabricDark} opacity="0.4" />
+      <rect x="150" y="430" width="500" height="20" rx="8" fill={COLORS.fabricDark} />
+      {/* two pillows each side */}
+      <rect x="185" y="262" width="120" height="44" rx="20" fill="#fff" />
+      <rect x="320" y="262" width="120" height="44" rx="20" fill="#fff" />
+      <rect x="495" y="262" width="120" height="44" rx="20" fill="#fff" />
+      <rect x="360" y="262" width="120" height="44" rx="20" fill="#f3ede0" />
+      {/* bolster */}
+      <rect x="200" y="240" width="400" height="22" rx="11" fill={COLORS.green} opacity="0.8" />
+      {/* legs */}
+      <rect x="155" y="378" width="24" height="50" rx="6" fill={COLORS.woodDark} />
+      <rect x="621" y="378" width="24" height="50" rx="6" fill={COLORS.woodDark} />
+      {/* subtle floor shadow */}
+      <ellipse cx="400" cy="545" rx="280" ry="20" fill={COLORS.shadow} />
+    </Frame>
+  );
+}
+
+function DiningNour() {
+  return (
+    <Frame label="طاولة طعام نور">
+      {/* warm backdrop circle */}
+      <circle cx="400" cy="220" r="120" fill={COLORS.woodLight} opacity="0.3" />
+      {/* pendant lamp */}
+      <line x1="400" y1="40" x2="400" y2="120" stroke={COLORS.woodDark} strokeWidth="4" />
+      <path d="M360 120 L440 120 L420 180 L380 180 Z" fill={COLORS.wood} />
+      <circle cx="400" cy="170" r="18" fill="#ffe9b8" opacity="0.6" />
+      {/* tabletop (perspective) */}
+      <path d="M150 360 L650 360 L610 400 L190 400 Z" fill={COLORS.wood} />
+      <path d="M160 358 L640 358 L605 396 L195 396 Z" fill={COLORS.woodLight} opacity="0.5" />
+      {/* pedestal base */}
+      <path d="M385 400 L415 400 L420 520 L380 520 Z" fill={COLORS.woodDark} />
+      <ellipse cx="400" cy="525" rx="70" ry="14" fill={COLORS.wood} />
+      {/* 4 chairs around */}
+      <g>
+        <rect x="250" y="390" width="64" height="120" rx="10" fill={COLORS.fabricDark} />
+        <rect x="250" y="350" width="64" height="56" rx="10" fill={COLORS.fabric} />
+      </g>
+      <g>
+        <rect x="486" y="390" width="64" height="120" rx="10" fill={COLORS.fabricDark} />
+        <rect x="486" y="350" width="64" height="56" rx="10" fill={COLORS.fabric} />
+      </g>
+      <g>
+        <rect x="336" y="220" width="70" height="50" rx="10" fill={COLORS.fabric} />
+        <rect x="336" y="200" width="70" height="30" rx="10" fill={COLORS.fabricDark} />
+      </g>
+      <g>
+        <rect x="394" y="220" width="70" height="50" rx="10" fill={COLORS.fabric} />
+        <rect x="394" y="200" width="70" height="30" rx="10" fill={COLORS.fabricDark} />
+      </g>
+      {/* table setting */}
+      <circle cx="400" cy="380" r="26" fill={COLORS.cream} stroke={COLORS.wood} strokeWidth="3" />
+      <rect x="388" y="368" width="24" height="24" rx="4" fill={COLORS.green} opacity="0.7" />
+      <rect x="440" y="372" width="30" height="6" rx="3" fill={COLORS.metal} />
+      <rect x="330" y="372" width="30" height="6" rx="3" fill={COLORS.metal} />
+    </Frame>
+  );
+}
+
+function NightstandAmal() {
+  return (
+    <Frame label="طاولة سرير أمل">
+      {/* soft wall */}
+      <rect x="0" y="0" width="800" height="300" fill={COLORS.bg2} />
+      {/* wall frame */}
+      <rect x="320" y="80" width="160" height="110" rx="6" fill="#fff" stroke={COLORS.wood} strokeWidth="6" />
+      <circle cx="400" cy="135" r="24" fill={COLORS.green} opacity="0.5" />
+      {/* cabinet body */}
+      <rect x="270" y="250" width="260" height="230" rx="14" fill={COLORS.wood} />
+      <rect x="285" y="265" width="230" height="200" rx="10" fill={COLORS.woodDark} />
+      {/* single door + drawer */}
+      <rect x="300" y="280" width="200" height="80" rx="8" fill={COLORS.wood} />
+      <rect x="300" y="375" width="200" height="80" rx="8" fill={COLORS.wood} />
+      {/* knobs */}
+      <circle cx="480" cy="320" r="8" fill={COLORS.woodLight} />
+      <circle cx="480" cy="415" r="8" fill={COLORS.woodLight} />
+      {/* top surface */}
+      <rect x="265" y="244" width="270" height="16" rx="6" fill={COLORS.woodLight} />
+      {/* lamp with warm glow */}
+      <circle cx="400" cy="200" r="36" fill="#ffe9b8" opacity="0.55" />
+      <rect x="392" y="200" width="16" height="48" rx="4" fill={COLORS.woodDark} />
+      <path d="M368 200 L432 200 L420 165 L380 165 Z" fill={COLORS.cream} stroke={COLORS.woodDark} strokeWidth="3" />
+      {/* book + cup */}
+      <rect x="310" y="232" width="48" height="12" rx="2" fill={COLORS.green} />
+      <rect x="455" y="228" width="26" height="18" rx="4" fill="#fff" stroke={COLORS.woodDark} strokeWidth="2" />
+      {/* legs */}
+      <rect x="285" y="480" width="20" height="45" rx="4" fill={COLORS.woodDark} />
+      <rect x="495" y="480" width="20" height="45" rx="4" fill={COLORS.woodDark} />
+      {/* floor shadow */}
+      <ellipse cx="400" cy="540" rx="160" ry="16" fill={COLORS.shadow} />
+    </Frame>
+  );
+}
+
 function Carpet() {
   return (
     <Frame label="سجادة">
@@ -242,11 +403,15 @@ function Carpet() {
 const RENDERERS: Record<ProductKind, () => React.ReactElement> = {
   sofa: Sofa,
   bed: Bed,
+  bedCozy: BedCozy,
+  bedKing: BedKing,
   dining: Dining,
+  diningNour: DiningNour,
   wardrobe: Wardrobe,
   chair: Chair,
   tv: Tv,
   nightstand: Nightstand,
+  nightstandAmal: NightstandAmal,
   carpet: Carpet,
 };
 

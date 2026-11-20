@@ -29,7 +29,7 @@ export const PRODUCTS: Product[] = [
     name: 'سرير سحار كينج',
     category: 'غرف النوم',
     price: 2450,
-    kind: 'bed',
+    kind: 'bedKing',
     desc: 'سرير كينج بخشب زان طبيعي وتنجيد مريح يمنح غرفتك دفئاً وراحة لا مثيل لها.',
     tag: 'جديد',
   },
@@ -39,7 +39,7 @@ export const PRODUCTS: Product[] = [
     category: 'طاولات',
     price: 1290,
     oldPrice: 1590,
-    kind: 'dining',
+    kind: 'diningNour',
     desc: 'طاولة طعام تتسع لستة أشخاص بسطح خشبي أنيق وأرجل معدنية متينة.',
   },
   {
@@ -72,7 +72,7 @@ export const PRODUCTS: Product[] = [
     name: 'طاولة سرير أمل',
     category: 'غرف النوم',
     price: 260,
-    kind: 'nightstand',
+    kind: 'nightstandAmal',
     desc: 'طاولة جانبية صغيرة بدرج أنيق، تكمّل غرفة النوم بشكل عملي وجميل.',
   },
   {

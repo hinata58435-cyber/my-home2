@@ -23,7 +23,7 @@ const FEATURES = [
 
 const GALLERY: { kind: ProductKind; label: string }[] = [
   { kind: 'sofa', label: 'غرف المعيشة' },
-  { kind: 'bed', label: 'غرف النوم' },
+  { kind: 'bedCozy', label: 'غرف النوم' },
   { kind: 'dining', label: 'طاولات الطعام' },
   { kind: 'tv', label: 'أركان الاستقبال' },
   { kind: 'carpet', label: 'إكسسوارات دافئة' },
@@ -102,7 +102,7 @@ export default function HomePage() {
           </div>
           <div className="absolute -bottom-6 left-6 hidden w-44 overflow-hidden rounded-3xl border-4 border-white shadow-soft sm:block">
             <FurnitureIllustration
-              kind="bed"
+              kind="bedCozy"
               label="غرفة نوم دافئة"
               className="h-32 w-full"
             />
