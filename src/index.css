@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-50: #f6f4ef;
+    --brand-100: #ece6d8;
+    --brand-200: #d9ccb3;
+    --brand-300: #c1ab85;
+    --brand-400: #a88d5e;
+    --brand-500: #8f7346;
+    --brand-600: #735a36;
+    --brand-700: #5a4630;
+    --brand-800: #463729;
+    --brand-900: #2e261e;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
+    background-color: #faf8f5;
+    color: #2e261e;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Cairo', 'Tajawal', system-ui, sans-serif;
+    font-weight: 700;
+  }
+
+  ::selection {
+    background-color: var(--brand-300);
+    color: #2e261e;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-base font-semibold text-brand-50 transition-all duration-300 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/30 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-300 bg-transparent px-6 py-3 text-base font-semibold text-brand-700 transition-all duration-300 hover:border-brand-600 hover:bg-brand-50 active:scale-95;
+  }
+
+  .card {
+    @apply rounded-3xl border border-brand-100 bg-white shadow-sm transition-all duration-300;
+  }
+
+  .nav-link {
+    @apply relative rounded-full px-4 py-2 text-sm font-medium text-brand-700 transition-colors duration-200 hover:text-brand-900;
+  }
+  .nav-link-active {
+    @apply bg-brand-600 text-brand-50 hover:text-brand-50;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  .animate-fade-up {
+    animation: fadeUp 0.7s ease-out both;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out both;
+  }
+
+  .bg-grain {
+    background-image: radial-gradient(circle at 1px 1px, rgba(115, 90, 54, 0.08) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Hide scrollbar for horizontal scroll rows */
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
