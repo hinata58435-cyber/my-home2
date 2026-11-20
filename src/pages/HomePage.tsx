@@ -59,7 +59,7 @@ export default function HomePage() {
       {/* Hero / Welcome */}
       <section className="container-x grid items-center gap-10 py-16 sm:py-24 lg:grid-cols-2">
         <div className="animate-fade-up">
-          <span className="inline-flex items-center gap-2 rounded-full bg-brand-100 px-4 py-1.5 text-sm font-semibold text-brand-700">
+          <span className="inline-flex items-center gap-2 rounded-full bg-sage/15 px-4 py-1.5 text-sm font-semibold text-sage-dark">
             <Sofa className="h-4 w-4" /> أثاث منزلي راقٍ في مكة
           </span>
           <h1 className="mt-5 font-display text-4xl font-extrabold leading-tight text-brand-900 text-balance sm:text-5xl lg:text-6xl">
@@ -70,7 +70,7 @@ export default function HomePage() {
             هادئة وأسعار تحبها — وتوصيل وتركيب لباب بيتك في مكة.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <button onClick={() => navigate('/products')} className="btn-primary">
+            <button onClick={() => navigate('/products')} className="btn-sage">
               تصفّح القائمة <ArrowLeft className="h-5 w-5" />
             </button>
             <button onClick={() => navigate('/about')} className="btn-outline">
@@ -80,13 +80,13 @@ export default function HomePage() {
 
           <div className="mt-10 flex items-center gap-6">
             <div>
-              <p className="font-display text-3xl font-extrabold text-brand-800">+500</p>
-              <p className="text-sm text-brand-600">عائلة في مكة اثّثت معنا</p>
+              <p className="font-display text-3xl font-extrabold text-sage-dark">+500</p>
+              <p className="text-sm text-brand-900/70">عائلة في مكة اثّثت معنا</p>
             </div>
             <div className="h-10 w-px bg-brand-200" />
             <div>
-              <p className="font-display text-3xl font-extrabold text-brand-800">سنتان</p>
-              <p className="text-sm text-brand-600">ضمان على كل قطعة</p>
+              <p className="font-display text-3xl font-extrabold text-sage-dark">سنتان</p>
+              <p className="text-sm text-brand-900/70">ضمان على كل قطعة</p>
             </div>
           </div>
         </div>
@@ -108,10 +108,10 @@ export default function HomePage() {
             />
           </div>
           <div className="absolute -top-5 right-6 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 shadow-soft animate-float">
-            <Star className="h-5 w-5 fill-brand-400 text-brand-400" />
+            <Star className="h-5 w-5 fill-sage text-sage" />
             <div>
               <p className="font-display text-sm font-bold text-brand-900">4.9/5</p>
-              <p className="text-xs text-brand-600">تقييم عملائنا</p>
+              <p className="text-xs text-brand-900/70">تقييم عملائنا</p>
             </div>
           </div>
         </div>
@@ -132,7 +132,7 @@ export default function HomePage() {
               key={f.title}
               className="card p-7 transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-soft"
             >
-              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
+              <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-sage/15 text-sage-dark">
                 <f.icon className="h-7 w-7" />
               </span>
               <h3 className="mt-5 font-display text-xl font-bold text-brand-900">{f.title}</h3>
@@ -174,10 +174,10 @@ export default function HomePage() {
                 />
               </div>
               <div className="p-5">
-                <span className="text-xs font-semibold text-brand-500">{p.category}</span>
+                <span className="text-xs font-semibold text-sage-dark">{p.category}</span>
                 <h3 className="mt-1 font-display text-lg font-bold text-brand-900">{p.name}</h3>
                 <div className="mt-3 flex items-center gap-2">
-                  <span className="font-display text-xl font-extrabold text-brand-700">
+                  <span className="font-display text-xl font-extrabold text-sage-dark">
                     {p.price.toLocaleString()} ر.س
                   </span>
                   {p.oldPrice && (
@@ -216,8 +216,8 @@ export default function HomePage() {
                   i === 0 ? 'h-64 sm:h-80' : 'h-40 sm:h-48'
                 }`}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-brand-900/10 to-transparent" />
-              <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-800 backdrop-blur">
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-900/80 via-brand-900/10 to-transparent" />
+              <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-900 backdrop-blur">
                 {g.label}
               </span>
             </div>
@@ -243,7 +243,7 @@ export default function HomePage() {
               >
                 <div className="flex gap-1">
                   {Array.from({ length: t.rating }).map((_, i) => (
-                    <Star key={i} className="h-5 w-5 fill-brand-400 text-brand-400" />
+                    <Star key={i} className="h-5 w-5 fill-sage text-sage" />
                   ))}
                 </div>
                 <blockquote className="text-sm leading-relaxed text-brand-700">“{t.text}”</blockquote>
@@ -259,18 +259,18 @@ export default function HomePage() {
 
       {/* CTA */}
       <section className="container-x py-16 sm:py-20">
-        <div className="overflow-hidden rounded-[2.5rem] bg-brand-800 px-8 py-14 text-center text-brand-50 shadow-soft sm:px-16">
+        <div className="sage-gradient overflow-hidden rounded-[2.5rem] px-8 py-14 text-center text-white shadow-soft sm:px-16">
           <h2 className="font-display text-3xl font-extrabold sm:text-4xl">جاهز تجهّز بيتك؟</h2>
-          <p className="mx-auto mt-4 max-w-xl text-brand-200">
+          <p className="mx-auto mt-4 max-w-xl text-white/85">
             تصفّح قائمتنا واختار القطع اللي تناسب ذوقك ومساحتك، أو راسلنا على واتساب ونساعدك تختار.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <button onClick={() => navigate('/products')} className="btn-primary bg-brand-50 text-brand-800 hover:bg-white">
+            <button onClick={() => navigate('/products')} className="inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3 text-base font-semibold text-sage-dark transition-all duration-300 hover:bg-brand-50 hover:shadow-lg active:scale-95">
               ابدأ التسوّق <ArrowLeft className="h-5 w-5" />
             </button>
             <button
               onClick={() => navigate('/contact')}
-              className="btn-outline border-brand-300/40 text-brand-50 hover:bg-brand-700 hover:text-white"
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/40 bg-transparent px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-white/15 active:scale-95"
             >
               تواصل معنا
             </button>

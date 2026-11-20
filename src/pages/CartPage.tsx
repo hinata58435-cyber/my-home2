@@ -72,7 +72,7 @@ export default function CartPage() {
     <div className="bg-grain">
       <section className="container-x py-12 sm:py-16">
         <h1 className="font-display text-3xl font-extrabold text-brand-900 sm:text-4xl">سلة المشتريات</h1>
-        <p className="mt-2 text-brand-600">عندك {count} قطعة في السلة. راجعها وأكمل الطلب.</p>
+        <p className="mt-2 text-brand-900/70">عندك {count} قطعة في السلة. راجعها وأكمل الطلب.</p>
 
         <div className="mt-8 grid gap-8 lg:grid-cols-[1.6fr_1fr]">
           {/* Items */}
@@ -88,7 +88,7 @@ export default function CartPage() {
                   <div className="flex items-start justify-between gap-2">
                     <div>
                       <h3 className="font-display text-base font-bold text-brand-900 sm:text-lg">{item.name}</h3>
-                      <p className="text-xs text-brand-500">{item.category}</p>
+                      <p className="text-xs text-sage-dark">{item.category}</p>
                     </div>
                     <button
                       onClick={() => remove(item.id)}
@@ -174,17 +174,17 @@ export default function CartPage() {
               </div>
 
               <div className="border-t border-brand-100 pt-4">
-                <div className="flex items-center justify-between text-sm text-brand-600">
+                <div className="flex items-center justify-between text-sm text-brand-900/70">
                   <span>الإجمالي الفرعي</span>
                   <span>{total.toLocaleString()} ر.س</span>
                 </div>
-                <div className="mt-1 flex items-center justify-between text-sm text-brand-600">
+                <div className="mt-1 flex items-center justify-between text-sm text-brand-900/70">
                   <span>التوصيل داخل مكة</span>
                   <span className="font-semibold text-green-700">مجاناً</span>
                 </div>
                 <div className="mt-3 flex items-center justify-between border-t border-brand-100 pt-3">
                   <span className="font-display font-bold text-brand-900">الإجمالي</span>
-                  <span className="font-display text-xl font-extrabold text-brand-700">
+                  <span className="font-display text-xl font-extrabold text-sage-dark">
                     {total.toLocaleString()} ر.س
                   </span>
                 </div>
@@ -196,7 +196,7 @@ export default function CartPage() {
               <button
                 type="button"
                 onClick={() => navigate('/products')}
-                className="flex w-full items-center justify-center gap-1 text-sm font-medium text-brand-600 transition-colors hover:text-brand-900"
+                className="flex w-full items-center justify-center gap-1 text-sm font-medium text-brand-900/70 transition-colors hover:text-brand-900"
               >
                 متابعة التسوّق <ArrowLeft className="h-4 w-4" />
               </button>

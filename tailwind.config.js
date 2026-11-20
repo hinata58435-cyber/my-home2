@@ -5,16 +5,21 @@ export default {
     extend: {
       colors: {
         brand: {
-          50: '#f6f4ef',
-          100: '#ece6d8',
-          200: '#d9ccb3',
-          300: '#c1ab85',
-          400: '#a88d5e',
-          500: '#8f7346',
-          600: '#735a36',
-          700: '#5a4630',
-          800: '#463729',
-          900: '#2e261e',
+          50: '#FAF8F3', // عاجي ivory
+          100: '#E9E1D2', // بيج beige
+          200: '#D8CDB8',
+          300: '#B69B7D', // خشبي wood
+          400: '#A6886A',
+          500: '#8F7355',
+          600: '#6F7E68', // سيج متوسط
+          700: '#566755',
+          800: '#829582', // سيج sage
+          900: '#454D43', // داكن dark
+        },
+        sage: {
+          light: '#A7B3A4',
+          DEFAULT: '#829582',
+          dark: '#566755',
         },
       },
       fontFamily: {
@@ -22,7 +27,7 @@ export default {
         display: ['Cairo', 'Tajawal', 'system-ui', 'sans-serif'],
       },
       boxShadow: {
-        soft: '0 10px 40px -12px rgba(70, 55, 41, 0.18)',
+        soft: '0 10px 40px -12px rgba(69, 77, 67, 0.20)',
       },
     },
   },

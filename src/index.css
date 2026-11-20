@@ -4,16 +4,12 @@
 
 @layer base {
   :root {
-    --brand-50: #f6f4ef;
-    --brand-100: #ece6d8;
-    --brand-200: #d9ccb3;
-    --brand-300: #c1ab85;
-    --brand-400: #a88d5e;
-    --brand-500: #8f7346;
-    --brand-600: #735a36;
-    --brand-700: #5a4630;
-    --brand-800: #463729;
-    --brand-900: #2e261e;
+    --sage: #829582;
+    --sage-dark: #566755;
+    --beige: #E9E1D2;
+    --ivory: #FAF8F3;
+    --wood: #B69B7D;
+    --dark: #454D43;
   }
 
   html {
@@ -22,8 +18,8 @@
 
   body {
     font-family: 'Tajawal', 'Cairo', system-ui, sans-serif;
-    background-color: #faf8f5;
-    color: #2e261e;
+    background-color: #FAF8F3;
+    color: #454D43;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -33,8 +29,8 @@
   }
 
   ::selection {
-    background-color: var(--brand-300);
-    color: #2e261e;
+    background-color: var(--sage);
+    color: #FAF8F3;
   }
 }
 
@@ -44,11 +40,15 @@
   }
 
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-600 px-6 py-3 text-base font-semibold text-brand-50 transition-all duration-300 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-600/30 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-brand-900 px-6 py-3 text-base font-semibold text-brand-50 transition-all duration-300 hover:bg-brand-700 hover:shadow-lg hover:shadow-brand-900/25 active:scale-95;
+  }
+
+  .btn-sage {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-sage px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:bg-sage-dark hover:shadow-lg hover:shadow-sage/30 active:scale-95;
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-300 bg-transparent px-6 py-3 text-base font-semibold text-brand-700 transition-all duration-300 hover:border-brand-600 hover:bg-brand-50 active:scale-95;
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-brand-300 bg-transparent px-6 py-3 text-base font-semibold text-brand-900 transition-all duration-300 hover:border-brand-900 hover:bg-brand-50 active:scale-95;
   }
 
   .card {
@@ -56,10 +56,10 @@
   }
 
   .nav-link {
-    @apply relative rounded-full px-4 py-2 text-sm font-medium text-brand-700 transition-colors duration-200 hover:text-brand-900;
+    @apply relative rounded-full px-4 py-2 text-sm font-medium text-brand-900 transition-colors duration-200 hover:text-sage-dark;
   }
   .nav-link-active {
-    @apply bg-brand-600 text-brand-50 hover:text-brand-50;
+    @apply bg-brand-900 text-brand-50 hover:text-brand-50;
   }
 }
 
@@ -79,8 +79,15 @@
   }
 
   .bg-grain {
-    background-image: radial-gradient(circle at 1px 1px, rgba(115, 90, 54, 0.08) 1px, transparent 0);
+    background-image: radial-gradient(circle at 1px 1px, rgba(130, 149, 130, 0.10) 1px, transparent 0);
     background-size: 24px 24px;
+  }
+
+  .bg-sage-gradient {
+    background: linear-gradient(135deg, #829582 0%, #566755 100%);
+  }
+  .bg-ivory-gradient {
+    background: linear-gradient(180deg, #FAF8F3 0%, #E9E1D2 100%);
   }
 }
 

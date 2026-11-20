@@ -59,12 +59,12 @@ export default function ContactPage() {
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {INFO.map((c) => (
             <div key={c.title} className="card p-6 text-center transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-soft">
-              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-brand-100 text-brand-700">
+              <span className="mx-auto flex h-12 w-12 items-center justify-center rounded-2xl bg-sage/15 text-sage-dark">
                 <c.icon className="h-6 w-6" />
               </span>
               <h3 className="mt-4 font-display text-base font-bold text-brand-900">{c.title}</h3>
               {c.lines.map((l) => (
-                <p key={l} className="mt-1 text-sm text-brand-600">{l}</p>
+                <p key={l} className="mt-1 text-sm text-brand-900/70">{l}</p>
               ))}
             </div>
           ))}
@@ -79,7 +79,7 @@ export default function ContactPage() {
             <div className="flex flex-col items-center py-12 text-center animate-fade-in">
               <CheckCircle2 className="h-16 w-16 text-green-600" />
               <h2 className="mt-5 font-display text-2xl font-extrabold text-brand-900">وصلتنا رسالتك!</h2>
-              <p className="mt-2 max-w-sm text-brand-600">
+              <p className="mt-2 max-w-sm text-brand-900/70">
                 فتحنا لك محادثة واتساب. راح نرد عليك في أقرب وقت إن شاء الله.
               </p>
               <button
@@ -93,7 +93,7 @@ export default function ContactPage() {
             <form onSubmit={handleSubmit} className="space-y-5">
               <div>
                 <h2 className="font-display text-2xl font-extrabold text-brand-900">أرسل رسالة</h2>
-                <p className="mt-1 text-sm text-brand-600">نكمل معك عبر واتساب مباشرة.</p>
+                <p className="mt-1 text-sm text-brand-900/70">نكمل معك عبر واتساب مباشرة.</p>
               </div>
 
               <div className="space-y-3">
@@ -102,7 +102,7 @@ export default function ContactPage() {
                   value={form.name}
                   onChange={(e) => setForm({ ...form, name: e.target.value })}
                   placeholder="الاسم الكامل"
-                  className="w-full rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 text-sm text-brand-800 outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-200"
+                  className="w-full rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 text-sm text-brand-900 outline-none transition-all focus:border-sage focus:ring-2 focus:ring-sage/30"
                 />
                 <input
                   required
@@ -110,7 +110,7 @@ export default function ContactPage() {
                   value={form.phone}
                   onChange={(e) => setForm({ ...form, phone: e.target.value })}
                   placeholder="رقم الجوال"
-                  className="w-full rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 text-sm text-brand-800 outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-200"
+                  className="w-full rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 text-sm text-brand-900 outline-none transition-all focus:border-sage focus:ring-2 focus:ring-sage/30"
                 />
                 <textarea
                   required
@@ -118,7 +118,7 @@ export default function ContactPage() {
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder="اكتب رسالتك هنا..."
                   rows={5}
-                  className="w-full rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 text-sm text-brand-800 outline-none transition-all focus:border-brand-500 focus:ring-2 focus:ring-brand-200"
+                  className="w-full rounded-xl border border-brand-200 bg-brand-50/40 px-4 py-3 text-sm text-brand-900 outline-none transition-all focus:border-sage focus:ring-2 focus:ring-sage/30"
                 />
               </div>
 
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex w-full items-center justify-center gap-2 text-sm font-medium text-brand-600 transition-colors hover:text-brand-900"
+                className="flex w-full items-center justify-center gap-2 text-sm font-medium text-brand-900/70 transition-colors hover:text-brand-900"
               >
                 <MessageCircle className="h-4 w-4" /> أو راسلنا مباشرة على واتساب
               </a>
