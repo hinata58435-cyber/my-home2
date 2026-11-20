@@ -3,6 +3,7 @@ import { Plus, Check, Search } from 'lucide-react';
 import { CATEGORIES, PRODUCTS } from '@/data/products';
 import { useCart } from '@/context/CartContext';
 import { navigate } from '@/router';
+import FurnitureIllustration from '@/components/FurnitureIllustration';
 
 export default function ProductsPage() {
   const [cat, setCat] = useState<string>('الكل');
@@ -81,13 +82,8 @@ export default function ProductsPage() {
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {filtered.map((p) => (
               <article key={p.id} className="card group overflow-hidden">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    className="h-60 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
+                <div className="relative overflow-hidden bg-brand-50 transition-transform duration-500 group-hover:scale-105">
+                  <FurnitureIllustration kind={p.kind} label={p.name} className="h-60 w-full" />
                   {p.tag && (
                     <span className="absolute top-3 right-3 rounded-full bg-brand-600 px-3 py-1 text-xs font-bold text-brand-50 shadow-sm">
                       {p.tag}

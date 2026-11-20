@@ -1,5 +1,6 @@
 import { Heart, Home, Users, Award, ArrowLeft } from 'lucide-react';
 import { navigate } from '@/router';
+import FurnitureIllustration from '@/components/FurnitureIllustration';
 
 const VALUES = [
   {
@@ -51,17 +52,15 @@ export default function AboutPage() {
         </div>
 
         <div className="grid grid-cols-2 gap-4 animate-fade-in">
-          <img
-            src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=600&q=80"
-            alt="صالة عرض My home"
-            className="h-72 w-full rounded-3xl object-cover shadow-soft"
-            loading="lazy"
+          <FurnitureIllustration
+            kind="sofa"
+            label="صالة عرض My home"
+            className="h-72 w-full overflow-hidden rounded-3xl bg-brand-50 shadow-soft"
           />
-          <img
-            src="https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=600&q=80"
-            alt="ركن أنيق من المعرض"
-            className="mt-8 h-72 w-full rounded-3xl object-cover shadow-soft"
-            loading="lazy"
+          <FurnitureIllustration
+            kind="wardrobe"
+            label="ركن أنيق من المعرض"
+            className="mt-8 h-72 w-full overflow-hidden rounded-3xl bg-brand-50 shadow-soft"
           />
         </div>
       </section>

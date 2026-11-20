@@ -1,10 +1,12 @@
+import type { ProductKind } from '@/components/FurnitureIllustration';
+
 export type Product = {
   id: string;
   name: string;
   category: string;
   price: number;
   oldPrice?: number;
-  image: string;
+  kind: ProductKind;
   desc: string;
   tag?: string;
 };
@@ -18,7 +20,7 @@ export const PRODUCTS: Product[] = [
     category: 'غرف المعيشة',
     price: 1890,
     oldPrice: 2350,
-    image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=900&q=80',
+    kind: 'sofa',
     desc: 'كنبة قماشية بثلاث مقاعد بلون بيج هادئ وقماش مقاوم للبقع، مثالية للعائلة.',
     tag: 'الأكثر مبيعاً',
   },
@@ -27,7 +29,7 @@ export const PRODUCTS: Product[] = [
     name: 'سرير سحار كينج',
     category: 'غرف النوم',
     price: 2450,
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe8e?auto=format&fit=crop&w=900&q=80',
+    kind: 'bed',
     desc: 'سرير كينج بخشب زان طبيعي وتنجيد مريح يمنح غرفتك دفئاً وراحة لا مثيل لها.',
     tag: 'جديد',
   },
@@ -37,15 +39,15 @@ export const PRODUCTS: Product[] = [
     category: 'طاولات',
     price: 1290,
     oldPrice: 1590,
-    image: 'https://images.unsplash.com/photo-1577140917170-285929f55b63?auto=format&fit=crop&w=900&q=80',
+    kind: 'dining',
     desc: 'طاولة طعام تتسع لستة أشخاص بسطح خشبي أنيق وأرجل معدنية متينة.',
   },
   {
     id: 'wardrobe-dana',
-    name: 'دو wardrobe دانا',
+    name: 'خزانة دانا',
     category: 'غرف النوم',
     price: 1690,
-    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=900&q=80',
+    kind: 'wardrobe',
     desc: 'خزانة ملابس واسعة بستة أبواب ومرايا جانبية لمظهر عملي وأنيق.',
   },
   {
@@ -53,7 +55,7 @@ export const PRODUCTS: Product[] = [
     name: 'كرسي راندا',
     category: 'غرف المعيشة',
     price: 340,
-    image: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=900&q=80',
+    kind: 'chair',
     desc: 'كرسي مخملي بلون زيتي هادئ بإطار خشبي، يضيف لمسة دافئة لأي ركن.',
   },
   {
@@ -62,7 +64,7 @@ export const PRODUCTS: Product[] = [
     category: 'غرف المعيشة',
     price: 890,
     oldPrice: 1090,
-    image: 'https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&w=900&q=80',
+    kind: 'tv',
     desc: 'وحدة تلفاز عصرية بأدراج تخزين واسعة وسطح مقاوم للخدوش.',
   },
   {
@@ -70,7 +72,7 @@ export const PRODUCTS: Product[] = [
     name: 'طاولة سرير أمل',
     category: 'غرف النوم',
     price: 260,
-    image: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe8e?auto=format&fit=crop&w=900&q=80',
+    kind: 'nightstand',
     desc: 'طاولة جانبية صغيرة بدرج أنيق، تكمّل غرفة النوم بشكل عملي وجميل.',
   },
   {
@@ -79,7 +81,7 @@ export const PRODUCTS: Product[] = [
     category: 'إكسسوارات',
     price: 520,
     oldPrice: 680,
-    image: 'https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=900&q=80',
+    kind: 'carpet',
     desc: 'سجادة صوفية ناعمة بنقشة هادئة تضيف الدفء لصالة منزلك.',
     tag: 'عرض',
   },

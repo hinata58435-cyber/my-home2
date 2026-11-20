@@ -3,6 +3,7 @@ import { Minus, Plus, Trash2, ShoppingBag, ArrowLeft, CheckCircle2, MessageCircl
 import { useCart } from '@/context/CartContext';
 import { navigate } from '@/router';
 import { WHATSAPP_NUMBER } from '@/data/products';
+import FurnitureIllustration from '@/components/FurnitureIllustration';
 
 export default function CartPage() {
   const { items, setQty, remove, clear, total, count } = useCart();
@@ -78,10 +79,10 @@ export default function CartPage() {
           <div className="space-y-4">
             {items.map((item) => (
               <div key={item.id} className="card flex gap-4 p-4">
-                <img
-                  src={item.image}
-                  alt={item.name}
-                  className="h-24 w-24 flex-shrink-0 rounded-2xl object-cover sm:h-28 sm:w-28"
+                <FurnitureIllustration
+                  kind={item.kind}
+                  label={item.name}
+                  className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-2xl bg-brand-50 sm:h-28 sm:w-28"
                 />
                 <div className="flex flex-1 flex-col">
                   <div className="flex items-start justify-between gap-2">

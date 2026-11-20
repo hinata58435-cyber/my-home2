@@ -1,6 +1,7 @@
 import { ArrowLeft, Truck, ShieldCheck, Sparkles, Star, Sofa } from 'lucide-react';
 import { navigate } from '@/router';
 import { PRODUCTS } from '@/data/products';
+import FurnitureIllustration, { type ProductKind } from '@/components/FurnitureIllustration';
 
 const FEATURES = [
   {
@@ -20,31 +21,13 @@ const FEATURES = [
   },
 ];
 
-const GALLERY = [
-  {
-    src: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=800&q=80',
-    label: 'غرف المعيشة',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe8e?auto=format&fit=crop&w=800&q=80',
-    label: 'غرف النوم',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1577140917170-285929f55b63?auto=format&fit=crop&w=800&q=80',
-    label: 'طاولات الطعام',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=800&q=80',
-    label: 'أركان الاستقبال',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1600166898405-da9535204843?auto=format&fit=crop&w=800&q=80',
-    label: 'إكسسوارات دافئة',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&w=800&q=80',
-    label: 'مكتبات منزلية',
-  },
+const GALLERY: { kind: ProductKind; label: string }[] = [
+  { kind: 'sofa', label: 'غرف المعيشة' },
+  { kind: 'bed', label: 'غرف النوم' },
+  { kind: 'dining', label: 'طاولات الطعام' },
+  { kind: 'tv', label: 'أركان الاستقبال' },
+  { kind: 'carpet', label: 'إكسسوارات دافئة' },
+  { kind: 'wardrobe', label: 'خزائن أنيقة' },
 ];
 
 const TESTIMONIALS = [
@@ -108,21 +91,20 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Hero image collage */}
+        {/* Hero illustration collage */}
         <div className="relative animate-fade-in">
-          <div className="overflow-hidden rounded-[2.5rem] shadow-soft">
-            <img
-              src="https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&w=1000&q=80"
-              alt="صالة منزل أنيقة بأثاث My home"
-              className="h-[420px] w-full object-cover sm:h-[520px]"
-              loading="eager"
+          <div className="overflow-hidden rounded-[2.5rem] shadow-soft bg-brand-50">
+            <FurnitureIllustration
+              kind="sofa"
+              label="صالة منزل أنيقة بأثاث My home"
+              className="h-[420px] w-full sm:h-[520px]"
             />
           </div>
           <div className="absolute -bottom-6 left-6 hidden w-44 overflow-hidden rounded-3xl border-4 border-white shadow-soft sm:block">
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe8e?auto=format&fit=crop&w=400&q=80"
-              alt="غرفة نوم دافئة"
-              className="h-32 w-full object-cover"
+            <FurnitureIllustration
+              kind="bed"
+              label="غرفة نوم دافئة"
+              className="h-32 w-full"
             />
           </div>
           <div className="absolute -top-5 right-6 flex items-center gap-2 rounded-2xl bg-white px-4 py-3 shadow-soft animate-float">
@@ -184,12 +166,11 @@ export default function HomePage() {
               onClick={() => navigate('/products')}
               className="card group overflow-hidden text-right"
             >
-              <div className="overflow-hidden">
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="h-56 w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
+              <div className="overflow-hidden bg-brand-50 transition-transform duration-500 group-hover:scale-105">
+                <FurnitureIllustration
+                  kind={p.kind}
+                  label={p.name}
+                  className="h-56 w-full"
                 />
               </div>
               <div className="p-5">
@@ -228,13 +209,12 @@ export default function HomePage() {
                 i === 0 ? 'col-span-2 row-span-2 sm:col-span-1' : ''
               }`}
             >
-              <img
-                src={g.src}
-                alt={g.label}
-                className={`w-full object-cover transition-transform duration-500 group-hover:scale-110 ${
+              <FurnitureIllustration
+                kind={g.kind}
+                label={g.label}
+                className={`w-full transition-transform duration-500 group-hover:scale-110 ${
                   i === 0 ? 'h-64 sm:h-80' : 'h-40 sm:h-48'
                 }`}
-                loading="lazy"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-900/70 via-brand-900/10 to-transparent" />
               <span className="absolute bottom-3 right-3 rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-brand-800 backdrop-blur">
